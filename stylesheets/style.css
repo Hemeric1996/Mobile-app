@@ -54,6 +54,10 @@ div.list {
   text-align: center;
   justify-content: center;
   padding: 10px 0;
+  width: 100% !important;
+}
+.ini {
+  margin-bottom: 50px;
 }
 .row .col-12.d-flex label {
   margin-bottom: 0px !important;

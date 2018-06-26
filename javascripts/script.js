@@ -44,6 +44,9 @@ var app = new Vue({
       },
       retour: function () {
         this.currentTab="reglages";
+      },
+      compte: function () {
+        this.currentTab="compte";
       }
     },
 });

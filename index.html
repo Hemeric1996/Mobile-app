@@ -72,7 +72,7 @@
                   <div class="list">
                     <ul>
                       <li>
-                        <div class="item-link item-content">
+                        <div class="item-link item-content" @click="compte">
                           <div class="item-media"><img src="images/account.png" alt="account" class="img-fluid"> </div>
                           <div class="item-inner">
                             <div class="item-title">Compte</div>
@@ -167,6 +167,55 @@
                               <div class="col-12">
                                 <input type="tel" name="num" value="" id="num" placeholder="+1 555-555-5555">
                               </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                </div>
+                <div class="block" v-if="currentTab == 'compte'">
+                  <div class="row in ini">
+                    <div class="col-3" @click="retour">Réglages</div>
+                    <div class="col-4">Compte</div>
+                    <div class="col-3"> </div>
+                  </div>
+                    <h5>Options additionnelles</h5>
+                    <div class="list" style="margin: 5px 0 !important;">
+                      <ul>
+                        <li>
+                          <div class="item-link item-content">
+                            <div class="item-media"><img src="images/account.png" alt="account" class="img-fluid"> </div>
+                            <div class="item-inner">
+                              <div class="item-title">Ajouter un utilisateur</div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="item-link item-content">
+                            <div class="item-media"><i class="icon icon-f7"></i></div>
+                            <div class="item-inner">
+                              <div class="item-title">Ajouter un nouveau compte</div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <h5 style="padding-top:30px;">Votre abonnement</h5>
+                    <div class="list" style="margin: 5px 0 !important;">
+                      <ul>
+                        <li>
+                          <div class="item-link item-content">
+                            <div class="item-media"><img src="images/account.png" alt="account" class="img-fluid"> </div>
+                            <div class="item-inner">
+                              <div class="item-title">Plan de base: Gratuit</div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="item-link item-content">
+                            <div class="item-media"><i class="icon icon-f7"></i></div>
+                            <div class="item-inner">
+                              <div class="item-title">Rehausser votre plan</div>
                             </div>
                           </div>
                         </li>
