@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'Rajdhani';
+  src: url('fonts/Rajdhani-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: 'Rajdhani' !important;
+}
+.page .navbar {
+  background-color: green !important;
+  height: 100px;
+}
+.page-content.tab.tab-active {
+  background: linear-gradient(green, #fff);
+}
+.md .navbar~* .page-content {
+  padding-top: 125px;
+}
+.md .toolbar {
+    background: #fff !important;
+    color: #69676B !important;
+    font-size: 14px;
+}
+.md .tabbar-labels a.tab-link {
+  color: #69676B !important;
+}
+.tabbar-labels a.tab-link.tab-link-active i {
+  color: #1AB73B !important;
+}
+div.list {
+  background-color: #fff !important;
+  border-radius: 4px !important;
+}
+.list img {
+  height: 30px;
+}
+.list img.profil {
+  height: 30px;
+  border-radius: 20px;
+}
+.in .col-4 {
+  color: #fff;
+  padding-left: 0;
+  padding-right: 0;
+}
+.in {
+  border-bottom: 1px solid #fff;
+  padding-bottom: 25px;
+}
+.row .col-12.d-flex {
+  border-bottom: 1px solid #808080;
+  font-weight: bold;
+  text-align: center;
+  justify-content: center;
+  padding: 10px 0;
+}
+.row .col-12.d-flex label {
+  margin-bottom: 0px !important;
+}

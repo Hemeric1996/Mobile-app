@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=yes, minimal-ui, viewport-fit=cover, height=device-height">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#2196f3">
+    <title>SAC-TIC</title>
+    <link rel="stylesheet" href="stylesheets/swiper.css">
+    <link rel="stylesheet" href="dist/css/framework7.min.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="icons\web-fonts-with-css\css\fontawesome-all.css">
+    <link rel="stylesheet" href="stylesheets/app.css">
+    <link rel="stylesheet" href="stylesheets/bootstrap.css">
+    <link rel="manifest" href="manifest.json">
+  </head>
+  <body>
+    <div id="app">
+      <div class="views">
+        <div class="view view-main">
+          <div class="page conseil" data-name="home">
+            <div class="navbar d-flex align-bottom" v-if="((currentVue == 'differentespages') && (currentTab == 'reglages'))">
+              <div class="container-fluid">
+                <h1 style="font-weight:bolder;font-size:25px;" @click="">Réglages</h1>
+              </div>
+            </div>
+            <div class="toolbar toolbar-bottom-md tabbar-labels" v-if="currentVue == 'differentespages'">
+              <div class="toolbar-inner">
+                <a href="#alerte" class="tab-link tab-link-active" @click="currentTab = ''">
+                  <i class="fas fa-home"></i>
+                  <span class="tabbar-label">Dashboard</span>
+                </a>
+                <a href="#conseil" class="tab-link" @click="currentTab = 'conseil'">
+                  <i class="fas fa-folder"></i>
+                  <span class="tabbar-label">Reçu</span>
+                </a>
+                <a href="#signaler" class="tab-link" @click="currentTab = 'reglages'">
+                  <i class="fas fa-cog"></i>
+                  <span class="tabbar-label">Réglages</span>
+                </a>
+                <a href="#profil" class="tab-link propro" @click="currentTab = 'profil'">
+                  <i class="fas fa-bell"></i>
+                  <span class="tabbar-label">Notifications</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="tabs" v-if="currentVue == 'differentespages'">
+              <div class="page-content tab tab-active" id="alerte">
+                <div class="block" style="padding-bottom: 30px !important;">
+
+                </div>
+              </div>
+              <div class="page-content tab" id="conseil" style="padding-top:84px !important;">
+                <div class="block" style="margin:0px !important;">
+                </div>
+              </div>
+              <div class="page-content tab" id="signaler">
+                <div class="block" v-if="currentTab == 'reglages'">
+                  <div class="list">
+                    <ul>
+                      <li>
+                        <div class="item-link item-content" @click="modifier">
+                          <div class="item-media"> <img src="images/hm.jpg" alt="profil" class="profil"> </div>
+                          <div class="item-inner">
+                            <div class="item-title">Prénom Nom </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="list">
+                    <ul>
+                      <li>
+                        <div class="item-link item-content">
+                          <div class="item-media"><img src="images/account.png" alt="account" class="img-fluid"> </div>
+                          <div class="item-inner">
+                            <div class="item-title">Compte</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-link item-content">
+                          <div class="item-media"><i class="icon icon-f7"></i></div>
+                          <div class="item-inner">
+                            <div class="item-title">Capture Web / Desktop</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-link item-content">
+                          <div class="item-media"><i class="icon icon-f7"></i></div>
+                          <div class="item-inner">
+                            <div class="item-title">Notifications</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-link item-content">
+                          <div class="item-media"><i class="icon icon-f7"></i></div>
+                          <div class="item-inner">
+                            <div class="item-title">Utilisation données</div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="list">
+                    <ul>
+                      <li>
+                        <div class="item-link item-content">
+                          <div class="item-media"><img src="images/account.png" alt="account" class="img-fluid"> </div>
+                          <div class="item-inner">
+                            <div class="item-title">Aide</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-link item-content">
+                          <div class="item-media"><i class="icon icon-f7"></i></div>
+                          <div class="item-inner">
+                            <div class="item-title">Parrainage</div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="list">
+                    <ul>
+                      <li>
+                        <div class="item-link item-content">
+                          <div class="item-media"><i class="icon icon-f7"></i></div>
+                          <div class="item-inner">
+                            <div class="item-title">Ajouter un widget</div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="block" v-if="currentTab == 'modifier'">
+                    <div class="row in">
+                      <div class="col-3" @click="retour">Réglages</div>
+                      <div class="col-4">Modifier le profil</div>
+                      <div class="col-3">Terminé</div>
+                    </div>
+                    <div class="list">
+                      <ul>
+                        <li>
+                          <div class="item-link item-content" @click="modifier">
+                            <div class="item-media"> <img src="images/hm.jpg" alt="profil" class="profil"> </div>
+                            <div class="item-inner">
+                              <div class="item-title">Prénom Nom </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="list">
+                      <ul>
+                        <li>
+                          <div class="item-link item-content" @click="modifier">
+                            <div class="row d-flex align-self-center">
+                              <div class="col-12 d-flex">
+                                <label for="num">NUMERO DE TELEPHONE</label>
+                              </div>
+                              <div class="col-12">
+                                <input type="tel" name="num" value="" id="num" placeholder="+1 555-555-5555">
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                </div>
+              </div>
+              <div class="page-content tab" id="profil">
+                <div class="navbar navbarpro" style="height:230px !important;">
+
+                </div>
+                <div class="block">
+
+                </div>
+              </div>
+            </div>
+
+            <div class="page-content tab">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="javascripts/vue.js"></script>
+    <script src="javascripts/framework7.js" charset="utf-8"></script>
+    <script src="javascripts/jquery.min.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+    <script src="javascripts/lodash.js" charset="utf-8"></script>
+    <script src="javascripts/swiper.js" charset="utf-8"></script>
+    <script src="javascripts/popper.js"></script>
+    <script src="javascripts/script.js" charset="utf-8"></script>
+</body>
+</html>
